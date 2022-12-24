@@ -32,7 +32,5 @@ jobs:
         run: docker pull ${{ secrets.DOCKERHUB_USERNAME }}/flask-remove
 
       - name: Run the pulled image
-        run: docker run -e FLASK_DEBUG=value ${{ secrets.DOCKERHUB_USERNAME }}/flask-remove:latest
-        env:
-          FLASK_DEBUG: False
+        run: docker run -e FLASK_DEBUG=False ${{ secrets.DOCKERHUB_USERNAME }}/flask-remove:latest
 
