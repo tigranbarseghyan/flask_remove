@@ -25,6 +25,7 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/flask-remove:latest
   pull-run:
+    needs: build-and-push
     runs-on: ubuntu-latest
     steps:
       - name: Pull the self created image from dockerhub
