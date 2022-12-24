@@ -32,7 +32,9 @@ jobs:
         run: docker pull ${{ secrets.DOCKERHUB_USERNAME }}/flask-remove
 
       - name: Run the pulled image
-        run: docker run -d ${{ secrets.DOCKERHUB_USERNAME }}/flask-remove:latest
+        run: docker run -d --name flask_proj ${{ secrets.DOCKERHUB_USERNAME }}/flask-remove:latest
         env:
           FLASK_DEBUG: False
+      - name: Get logs
+        run: docker logs flask_proj
 
