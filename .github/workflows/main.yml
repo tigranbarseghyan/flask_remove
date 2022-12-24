@@ -33,6 +33,7 @@ jobs:
 
       - name: Run the pulled image
         run: docker run ${{ secrets.DOCKERHUB_USERNAME }}/flask-remove:latest
-        env:
-          FLASK_DEBUG: "False"
+        with:
+          env:
+            FLASK_DEBUG: False
 
