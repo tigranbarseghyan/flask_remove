@@ -34,5 +34,5 @@ jobs:
       - name: Run the pulled image
         run: docker run ${{ secrets.DOCKERHUB_USERNAME }}/flask-remove:latest
         env:
-          FLASK_DEBUG: development
+          FLASK_DEBUG: production
 
