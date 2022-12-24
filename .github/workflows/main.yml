@@ -36,5 +36,7 @@ jobs:
         env:
           FLASK_DEBUG: False
       - name: Get logs
-        run: docker logs flask_proj
+        run: docker logs flask_proj > output.txt
+      - name: Print the output
+        run: cat output.txt
 
