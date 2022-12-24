@@ -3,4 +3,5 @@ RUN python3 -m pip install --upgrade pip
 RUN pip install flask
 WORKDIR ./app
 COPY . .
+ENV FLASK_DEBUG=development
 CMD ["python3", "./main.py"]
